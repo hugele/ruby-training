@@ -48,3 +48,11 @@ end
 
 # require "date" Rubyの標準ライブラリ
 # day = Date.today.wday wdayは曜日を0(日曜日)から6(土曜日)の整数で取得することができるDateクラスに用意されているメソッド
+
+# 中央値を出力せよ
+# 入力例1
+# 690 342 960
+input= gets.split(" ").map &:to_i
+
+price= input.sort
+puts price[1]
