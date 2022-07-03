@@ -1,5 +1,39 @@
 #Ruby トレーニング
 
+class Player
+    def initialize(name)
+        @name = name
+    end
+
+    def attack(enemy)
+        puts "#{@name}は、#{enemy}を攻撃した！"
+    end
+end
+
+class Wizerd < Player
+    def attack(enemy)
+        puts "ふんがぁーーー"
+        puts "#{@name}は#{enemy}に殴った"
+    end
+end
+
+
+puts "=== パーティでスライムと戦う ==="
+hero   = Player.new("勇者")
+warrior = Player.new("戦士")
+wizerd = Wizerd.new("ちいかわ")
+party = [hero, warrior,wizerd]
+#↑↑↑↑↑オブジエクト（処理）を配列として扱う
+
+# p party
+
+party.each do |player|
+    player.attack("スライム")
+end
+
+
+
+
 # 4 桁の数字で構成された文字列 s が入力されるので同じ数字が 2 つ以上存在すれば「NG」、そうでない場合は「OK」と出力
 #　例　2022 →NG
 if input.length - input.uniq.length== 0
