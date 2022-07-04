@@ -98,3 +98,19 @@ input= gets.split(" ").map &:to_i
 
 price= input.sort
 puts price[1]
+
+
+# 睡眠時間8時間を計算
+#入力例 12:45
+input_line = gets.chomp.split(":")
+time=input_line
+
+sllep=time[0].to_i-8
+go_bed=24 + sllep
+
+if 24<go_bed
+    a=0+sllep
+     puts  "#{a}:#{time[1].to_i}"
+else
+     puts  "#{go_bed}:#{time[1].to_i}"
+end
