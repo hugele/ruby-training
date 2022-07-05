@@ -1,5 +1,67 @@
 #Ruby トレーニング
 
+# 以下の要件を満たす in1to10メソッドを実装しましょう。
+
+# 第一引数のnumが1以上かつ10以下の範囲であればTrueを出力すること
+# 第二引数のoutside_modeがTrueの場合は、第一引数numが条件範囲外でもTrueを出力すること
+# それ以外はFalseを出力すること
+
+def in1to10(num, outside_mode)
+  if (num>=1 && num<=10 )|| outside_mode==true
+          puts "True"
+  else
+          puts "False"
+  end
+end
+
+in1to10(5,false)
+in1to10(11,false) 
+in1to10(11,true) 
+
+#出力が下記になれば正解
+#True
+#False
+#True
+
+
+# ターミナルから数字を入力して、数字に応じて以下のように出力するプログラムを書いてください。
+# 10以下なら10以下の数字です
+# 10より大きい数値なら10より大きい数字です
+# 10以下でかつ0以下なら0以下の数字です
+
+input=gets.to_i
+puts input
+
+if input<=10 && input <=0
+        puts "10以下でかつ0以下なら0以下の数字です"
+elsif input>=10
+        puts"10より大きい数字です"
+else input<=10
+        puts "10以下の数字です"
+end
+
+
+# 以下の要件を満たすcheck_nameメソッドを実装しましょう。
+
+# 名前を入力すると「登録が完了しました」という文字列を出力すること
+# 名前の中にピリオド(.)がある場合は、「 "!エラー!記号は登録できません"」という文字列を出力すること
+# 名前の中に空白（半角のみ）がある場合は、「 "!エラー!空白は登録できません"」という文字列を出力すること
+
+def check_name(str) 
+  if str.include?(" ") || str.include?(",")
+          puts "!エラー!記号は登録できません"
+  else  
+          puts "登録が完了しました"
+  end
+                  
+end
+
+puts "登録したい名前を入力してください(例)YamadaTaro"
+str = gets
+check_name(str) 
+
+
+
 class Player
     def initialize(name)
         @name = name
@@ -25,8 +87,6 @@ wizerd = Wizerd.new("ちいかわ")
 party = [hero, warrior,wizerd]
 #↑↑↑↑↑オブジエクト（処理）を配列として扱う
 
-# p party
-
 party.each do |player|
     player.attack("スライム")
 end
@@ -36,6 +96,8 @@ end
 
 # 4 桁の数字で構成された文字列 s が入力されるので同じ数字が 2 つ以上存在すれば「NG」、そうでない場合は「OK」と出力
 #　例　2022 →NG
+input= gets.chomp.chars
+
 if input.length - input.uniq.length== 0
     puts "OK"
 else 
