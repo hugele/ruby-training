@@ -1,2 +1,2 @@
 # training
-paizaとテックキャンプのRuby問題集
+paizaとテックキャンプの問題集を使ったRubyの練習
