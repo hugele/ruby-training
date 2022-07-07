@@ -1,5 +1,32 @@
 #Ruby トレーニング
 
+# 3つのインスタンスを生成し、以下を出力
+# 採れたて新鮮な果実です
+# リンゴは120円です
+# オレンジは200円です
+
+class Fruit
+ def self.fresh
+   puts "採れたて新鮮な果実です"
+ end
+
+ def initialize(name,price)
+   @name=name
+   @price=price
+ end
+
+ def introduce
+   puts "#{@name}は #{@price}円です"
+ end
+end
+
+
+orange = Fruit.new("オレンジ", 200)
+apple = Fruit.new("リンゴ", 120)
+Fruit.fresh
+apple.introduce
+orange.introduce
+
 # あなたはお花見の準備のためにレジャーシートを買うことにしました。
 # レジャーシートの質に興味のないあなたは最も面積あたりの価格の安いレジャーシートを探すため、プログラムを書くことにしました。
 
